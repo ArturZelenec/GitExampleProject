@@ -10,7 +10,8 @@ namespace GitExampleProject.Controllers
         [HttpGet]
         public IActionResult Get()
         {
-            return Ok(new { FullName = "Artur Z." });
+            string fullName = "Artur Z.";
+            return Ok(new { FullName =  fullName});
         }
     }
 }
