@@ -7,11 +7,20 @@ namespace GitExampleProject.Controllers
     [ApiController]
     public class FullNameController : ControllerBase
     {
+        private readonly ILogger<WeatherForecastController> _logger;
+
+        public FullNameController(ILogger<WeatherForecastController> logger)
+        {
+            _logger = logger;
+        }
+
         [HttpGet]
         public IActionResult Get()
         {
+            
             string fullName = "Artur Z.";
-            return Ok(new { FullName =  fullName});
+           _logger.LogInformation("Bla bla bla bla");
+            return Ok(new { FullName = fullName });
         }
     }
 }
